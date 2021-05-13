@@ -9,8 +9,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let cards = CardsFactory.createCards()
+    
     var body: some View {
-        Text("Hello, World!")
+        
+        Grid(cards) { card in
+            RoundedRectangle(cornerRadius: 5).padding()
+        }
     }
 }
 
