@@ -16,13 +16,27 @@ class SetGame {
         resetGame()
     }
     
-    func choose(card: Card) {
+    func turn(_ card: Card) {
+        
+        if chosenCards.contains(where: { card.id == $0.id }) {
+            unchoose(card)
+        } else {
+            choose(card)
+        }
+    }
+    
+    func choose(_ card: Card) {
         if chosenCards.count == 3 {
             turnDownAllChosenCards()
         }
         
         card.turnUp()
         chosenCards.append(card)
+    }
+    
+    func unchoose(_ card: Card) {
+        card.turnDown()
+        chosenCards = chosenCards.filter { $0.id != card.id }
     }
     
     func resetGame() {

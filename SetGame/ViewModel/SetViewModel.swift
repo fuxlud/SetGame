@@ -26,6 +26,6 @@ class SetViewModel: ObservableObject {
     
     func choose(card: Card) {
         objectWillChange.send()
-        model.choose(card: card)
+        model.turn(card)
     }
 }
