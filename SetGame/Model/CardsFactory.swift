@@ -1,3 +1,9 @@
+enum SetNumberOfShapes: Int {
+    case one = 1
+    case two
+    case three
+}
+
 struct CardsFactory {
     
     static func createCards() -> [Card] {
