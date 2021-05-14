@@ -13,7 +13,7 @@ struct FaceView: View {
     
     var body: some View {
         Grid(card.figurs, viewForItem: { figure in
-            Capsule().fill(Color.blue)
+            Capsule().fill(figure.color.setColor)
                 .padding()
                 
             })
