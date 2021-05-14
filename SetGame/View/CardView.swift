@@ -20,7 +20,7 @@ struct CardView: View {
             } else {
                 RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.black)
             }
-        }
+        }.padding()
     }
     
     // MARK: Drawing Constants

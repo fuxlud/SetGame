@@ -19,9 +19,9 @@ class SetViewModel: ObservableObject {
         model.presentedCards
     }
     
-    func restartGame() {
+    func resetGame() {
         objectWillChange.send()
-        model.restartGame()
+        model.resetGame()
     }
     
     func choose(card: Card) {

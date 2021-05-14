@@ -13,7 +13,7 @@ class SetGame {
     var presentedCards = [Card]()
     
     init() {
-        restartGame()
+        resetGame()
     }
     
     func choose(card: Card) {
@@ -21,7 +21,7 @@ class SetGame {
         chosenCards.append(card)
     }
     
-    func restartGame() {
+    func resetGame() {
         
         turnDownAllChosenCards()
         chooseNewCardToPresent()

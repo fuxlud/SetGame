@@ -12,10 +12,21 @@ struct SetView: View {
     @ObservedObject var viewModel: SetViewModel
     
     var body: some View {
-        
-        Grid(viewModel.presentedCards) { card in
-            CardView(isFaceUp: card.isFaceUp, card: card).onTapGesture {
-                self.viewModel.choose(card: card)
+        VStack() {
+            HStack(alignment: .bottom) {
+                Text("Score: 100")
+                Button("Reset Game", action: {
+                    withAnimation(.easeIn) {
+                        self.viewModel.resetGame()
+                    }
+                })
+            }
+            
+            Divider()
+            Grid(viewModel.presentedCards) { card in
+                CardView(isFaceUp: card.isFaceUp, card: card).onTapGesture {
+                    self.viewModel.choose(card: card)
+                }
             }
         }
     }
