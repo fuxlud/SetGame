@@ -53,7 +53,7 @@ class Card: Identifiable {
         self.color = color
     }
     
-    func choose() {
+    func turnUp() {
         self.isFaceUp = true
     }
     

@@ -16,9 +16,7 @@ struct SetView: View {
             HStack(alignment: .bottom) {
                 Text("Score: 100")
                 Button("Reset Game", action: {
-                    withAnimation(.easeIn) {
-                        self.viewModel.resetGame()
-                    }
+                    self.viewModel.resetGame()
                 })
             }
             

@@ -17,7 +17,11 @@ class SetGame {
     }
     
     func choose(card: Card) {
-        card.choose()
+        if chosenCards.count == 3 {
+            turnDownAllChosenCards()
+        }
+        
+        card.turnUp()
         chosenCards.append(card)
     }
     
