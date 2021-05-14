@@ -8,13 +8,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    
-    let cards = CardsFactory.createCards()
+struct SetView: View {
+    @ObservedObject var viewModel: SetViewModel
     
     var body: some View {
         
-        Grid(cards) { card in
+        Grid(viewModel.presentedCards) { card in
             RoundedRectangle(cornerRadius: 5).padding()
         }
     }
@@ -22,6 +21,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let viewModel = SetViewModel()
+        return SetView(viewModel: viewModel)
     }
 }
