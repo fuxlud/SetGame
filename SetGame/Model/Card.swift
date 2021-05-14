@@ -10,7 +10,7 @@ import Foundation
 
 enum Shape {
     case diamond
-    case squiggle
+    case rectangle
     case oval
 }
 

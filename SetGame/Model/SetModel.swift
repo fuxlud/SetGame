@@ -19,7 +19,9 @@ class SetGame {
     func turn(_ card: Card) {
         
         if chosenCards.contains(where: { card.id == $0.id }) {
-            unchoose(card)
+            if chosenCards.count < 3 {
+                unchoose(card)
+            }
         } else {
             choose(card)
         }
