@@ -9,7 +9,7 @@
 import Foundation
 
 class SetViewModel: ObservableObject {
-    @Published var model = SetModel()
+    @Published var model = SetGame()
 
     var allCards: [Card] {
         model.allCards
@@ -20,7 +20,12 @@ class SetViewModel: ObservableObject {
     }
     
     func restartGame() {
+        objectWillChange.send()
         model.restartGame()
     }
     
+    func choose(card: Card) {
+        objectWillChange.send()
+        model.choose(card: card)
+    }
 }

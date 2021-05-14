@@ -14,7 +14,9 @@ struct SetView: View {
     var body: some View {
         
         Grid(viewModel.presentedCards) { card in
-            RoundedRectangle(cornerRadius: 5).padding()
+            CardView(isFaceUp: card.isFaceUp, card: card).onTapGesture {
+                self.viewModel.choose(card: card)
+            }
         }
     }
 }

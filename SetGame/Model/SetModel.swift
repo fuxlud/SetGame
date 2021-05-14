@@ -6,7 +6,8 @@
 //  Copyright © 2021 fuxlud. All rights reserved.
 //
 
-struct SetModel {
+class SetGame {
+    
     let allCards = CardsFactory.createCards()
     var chosenCards = [Card]()
     var presentedCards = [Card]()
@@ -15,7 +16,28 @@ struct SetModel {
         restartGame()
     }
     
-    mutating func restartGame() {
+    func choose(card: Card) {
+        card.choose()
+        chosenCards.append(card)
+    }
+    
+    func restartGame() {
+        
+        turnDownAllChosenCards()
+        chooseNewCardToPresent()
+    }
+    
+    func turnDownAllChosenCards() {
+        for card in chosenCards {
+            card.turnDown()
+            chosenCards = chosenCards.filter { $0.id != card.id }
+        }
+    }
+    
+    func chooseNewCardToPresent() {
+        
+        presentedCards = [Card]()
+        
         while presentedCards.count != 12 {
             if let randomCard = allCards.randomElement(),
                 !presentedCards.contains(where: { randomCard.id == $0.id }) {

@@ -32,10 +32,32 @@ enum SetNumberOfShapes {
     case three
 }
 
-struct Card: Identifiable {
-    var id: Int
+class Card: Identifiable {
+    let id: Int
     let numberOfShapes: SetNumberOfShapes
     let shape: Shape
     let shading: Shading
     let color: SetColor
+    var isFaceUp = false
+    
+    init(id: Int,
+        numberOfShapes: SetNumberOfShapes,
+        shape: Shape,
+        shading: Shading,
+        color: SetColor) {
+        
+        self.id = id
+        self.numberOfShapes = numberOfShapes
+        self.shape = shape
+        self.shading = shading
+        self.color = color
+    }
+    
+    func choose() {
+        self.isFaceUp = true
+    }
+    
+    func turnDown() {
+        self.isFaceUp = false
+    }
 }
