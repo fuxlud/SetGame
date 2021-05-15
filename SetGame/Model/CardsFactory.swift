@@ -1,9 +1,3 @@
-enum SetNumberOfShapes: Int {
-    case one = 1
-    case two
-    case three
-}
-
 struct CardsFactory {
     
     static func createCards() -> [Card] {
@@ -34,7 +28,34 @@ struct CardsFactory {
         let card25 = Card(id: 25, numberOfShapes: .three, shape: .oval, shading: .striped, color: .green)
         let card26 = Card(id: 26, numberOfShapes: .three, shape: .oval, shading: .striped, color: .purple)
         let card27 = Card(id: 27, numberOfShapes: .three, shape: .oval, shading: .striped, color: .red)
+        let card28 = Card(id: 28, numberOfShapes: .one, shape: .rectangle, shading: .solid, color: .green)
+        let card29 = Card(id: 29, numberOfShapes: .one, shape: .rectangle, shading: .solid, color: .purple)
+        let card30 = Card(id: 30, numberOfShapes: .one, shape: .rectangle, shading: .solid, color: .red)
+        let card31 = Card(id: 31, numberOfShapes: .one, shape: .rectangle, shading: .open, color: .green)
+        let card32 = Card(id: 32, numberOfShapes: .one, shape: .rectangle, shading: .open, color: .purple)
+        let card33 = Card(id: 33, numberOfShapes: .one, shape: .rectangle, shading: .open, color: .red)
+        let card34 = Card(id: 34, numberOfShapes: .one, shape: .rectangle, shading: .striped, color: .green)
+        let card35 = Card(id: 35, numberOfShapes: .one, shape: .rectangle, shading: .striped, color: .purple)
+        let card36 = Card(id: 36, numberOfShapes: .one, shape: .rectangle, shading: .striped, color: .red)
+        let card37 = Card(id: 37, numberOfShapes: .two, shape: .rectangle, shading: .solid, color: .green)
+        let card38 = Card(id: 38, numberOfShapes: .two, shape: .rectangle, shading: .solid, color: .purple)
+        let card39 = Card(id: 39, numberOfShapes: .two, shape: .rectangle, shading: .solid, color: .red)
+        let card40 = Card(id: 40, numberOfShapes: .two, shape: .rectangle, shading: .open, color: .green)
+        let card41 = Card(id: 41, numberOfShapes: .two, shape: .rectangle, shading: .open, color: .purple)
+        let card42 = Card(id: 42, numberOfShapes: .two, shape: .rectangle, shading: .open, color: .red)
+        let card43 = Card(id: 43, numberOfShapes: .two, shape: .rectangle, shading: .striped, color: .green)
+        let card44 = Card(id: 44, numberOfShapes: .two, shape: .rectangle, shading: .striped, color: .purple)
+        let card45 = Card(id: 45, numberOfShapes: .two, shape: .rectangle, shading: .striped, color: .red)
+        let card46 = Card(id: 46, numberOfShapes: .three, shape: .rectangle, shading: .solid, color: .green)
+        let card47 = Card(id: 47, numberOfShapes: .three, shape: .rectangle, shading: .solid, color: .purple)
+        let card48 = Card(id: 48, numberOfShapes: .three, shape: .rectangle, shading: .solid, color: .red)
+        let card49 = Card(id: 49, numberOfShapes: .three, shape: .rectangle, shading: .open, color: .green)
+        let card50 = Card(id: 50, numberOfShapes: .three, shape: .rectangle, shading: .open, color: .purple)
+        let card51 = Card(id: 51, numberOfShapes: .three, shape: .rectangle, shading: .open, color: .red)
+        let card52 = Card(id: 52, numberOfShapes: .three, shape: .rectangle, shading: .striped, color: .green)
+        let card53 = Card(id: 53, numberOfShapes: .three, shape: .rectangle, shading: .striped, color: .purple)
+        let card54 = Card(id: 54, numberOfShapes: .three, shape: .rectangle, shading: .striped, color: .red)
         
-        return [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27]
+        return [card1, card2, card3, card4, card5, card6, card7, card8, card9, card10, card11, card12, card13, card14, card15, card16, card17, card18, card19, card20, card21, card22, card23, card24, card25, card26, card27, card28, card29, card30, card31, card32, card33, card34, card35, card36, card37, card38, card39, card40, card41, card42, card43, card44, card45, card46, card47, card48, card49, card50, card51, card52, card53, card54]
     }
 }

@@ -10,10 +10,18 @@ import SwiftUI
 
 struct FaceView: View {
     var card: Card
-    
+
     var body: some View {
-        List(0..<card.figurs.count, rowContent: { _ in
-            Capsule()
+        return List(0..<card.numberOfShapes.rawValue, rowContent: { _ -> AnyView in
+            
+            switch self.card.shape {
+            case .oval:
+                return AnyView(Capsule())
+            case .rectangle:
+                return AnyView(Rectangle())
+            default:
+                return AnyView(EmptyView())
+            }
         })
     }
 }

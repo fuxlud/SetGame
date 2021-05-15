@@ -7,14 +7,51 @@
 //
 
 import Foundation
+import SwiftUI
 
+enum Shape {
+    case diamond
+    case rectangle
+    case oval
+}
 
+enum Shading {
+    case solid
+    case striped
+    case open
+}
+
+enum SetColor {
+    case red
+    case green
+    case purple
+    
+    var setColor: (Color) {
+        get {
+            switch self {
+            case .red:
+                return Color.red
+            case .green:
+                return Color.green
+            case .purple:
+                return Color.purple
+            }
+        }
+    }
+}
+
+enum SetNumberOfShapes: Int {
+    case one = 1
+    case two
+    case three
+}
 
 class Card: Identifiable {
     let id: Int
     let shading: Shading
     let color: SetColor
-    let figurs: [Figure]
+    let shape: Shape
+    let numberOfShapes: SetNumberOfShapes
     var isFaceUp = false
     
     init(id: Int,
@@ -25,13 +62,8 @@ class Card: Identifiable {
         self.id = id
         self.shading = shading
         self.color = color
-        
-        var figurs = [Figure]()
-        for i in 0..<numberOfShapes.rawValue {
-            let figure = Figure(id: i, shape: shape)
-            figurs.append(figure)
-        }
-        self.figurs = figurs
+        self.shape = shape
+        self.numberOfShapes = numberOfShapes
     }
     
     func turnUp() {
