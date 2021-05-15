@@ -15,7 +15,10 @@ struct CardView: View {
     
     var body: some View {
         GeometryReader() { geometry in
-            FaceView(card: self.card).foregroundColor(.red)
+            
+            FaceView(card: self.card)
+                .foregroundColor(self.card.color.setColor)
+                .opacity(0.2)
 //            if self.isFaceUp {
 //                RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.blue)
 //            } else {

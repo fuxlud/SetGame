@@ -12,6 +12,8 @@ import Foundation
 
 class Card: Identifiable {
     let id: Int
+    let shading: Shading
+    let color: SetColor
     let figurs: [Figure]
     var isFaceUp = false
     
@@ -21,10 +23,12 @@ class Card: Identifiable {
          shading: Shading,
          color: SetColor) {
         self.id = id
+        self.shading = shading
+        self.color = color
         
         var figurs = [Figure]()
         for i in 0..<numberOfShapes.rawValue {
-            let figure = Figure(id: i, shape: shape, shading: shading, color: color)
+            let figure = Figure(id: i, shape: shape)
             figurs.append(figure)
         }
         self.figurs = figurs

@@ -43,6 +43,4 @@ enum SetColor {
 struct Figure: Identifiable {
     let id: Int
     let shape: Shape
-    let shading: Shading
-    let color: SetColor
 }
