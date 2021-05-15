@@ -12,9 +12,9 @@ struct FaceView: View {
     var card: Card
     
     var body: some View {
-        List(card.figurs) { figure in
+        List(0..<card.figurs.count, rowContent: { _ in
             Capsule()
-        }
+        })
     }
 }
 
