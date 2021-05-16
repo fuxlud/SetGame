@@ -35,10 +35,11 @@ struct CardView: View {
     
     var figuresView: some View {
 
-        return List(0..<card.numberOfShapes.rawValue, rowContent: { _ -> AnyView in
-
-            AnyView(coloredFigureView())
-        })
+        return VStack(alignment: .center) {
+            ForEach(0..<card.numberOfShapes.rawValue) { _ -> AnyView in
+                AnyView(coloredFigureView())
+            }
+        }.padding(20)
     }
     
     @ViewBuilder
