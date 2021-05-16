@@ -27,7 +27,7 @@ struct SetView: View {
             Divider()
             
                 Grid(viewModel.presentedCards) { card in
-                    CardView(isFaceUp: card.isFaceUp, card: card).onTapGesture {
+                    CardView(isFaceUp: card.isSelected, card: card).onTapGesture {
                         self.viewModel.choose(card: card)
                     }
                 }

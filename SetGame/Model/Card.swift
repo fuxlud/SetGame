@@ -52,7 +52,7 @@ class Card: Identifiable {
     let color: SetColor
     let shape: SetShape
     let numberOfShapes: SetNumberOfShapes
-    var isFaceUp = false
+    var isSelected = false
     
     init(id: Int,
          numberOfShapes: SetNumberOfShapes,
@@ -66,11 +66,11 @@ class Card: Identifiable {
         self.numberOfShapes = numberOfShapes
     }
     
-    func turnUp() {
-        self.isFaceUp = true
+    func select() {
+        self.isSelected = true
     }
     
-    func turnDown() {
-        self.isFaceUp = false
+    func unselect() {
+        self.isSelected = false
     }
 }

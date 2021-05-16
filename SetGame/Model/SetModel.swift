@@ -9,7 +9,7 @@
 class SetGame {
     
     let allCards = CardsFactory.createCards()
-    var chosenCards = [Card]()
+    var selectedCards = [Card]()
     var presentedCards = [Card]()
     
     init() {
@@ -18,27 +18,27 @@ class SetGame {
     
     func turn(_ card: Card) {
         
-        if chosenCards.contains(where: { card.id == $0.id }) {
-            if chosenCards.count < 3 {
-                unchoose(card)
+        if selectedCards.contains(where: { card.id == $0.id }) {
+            if selectedCards.count < 3 {
+                unselect(card)
             }
         } else {
-            choose(card)
+            select(card)
         }
     }
     
-    func choose(_ card: Card) {
-        if chosenCards.count == 3 {
+    func select(_ card: Card) {
+        if selectedCards.count == 3 {
             turnDownAllChosenCards()
         }
         
-        card.turnUp()
-        chosenCards.append(card)
+        card.select()
+        selectedCards.append(card)
     }
     
-    func unchoose(_ card: Card) {
-        card.turnDown()
-        chosenCards = chosenCards.filter { $0.id != card.id }
+    func unselect(_ card: Card) {
+        card.unselect()
+        selectedCards = selectedCards.filter { $0.id != card.id }
     }
     
     func resetGame() {
@@ -48,9 +48,9 @@ class SetGame {
     }
     
     func turnDownAllChosenCards() {
-        for card in chosenCards {
-            card.turnDown()
-            chosenCards = chosenCards.filter { $0.id != card.id }
+        for card in selectedCards {
+            card.unselect()
+            selectedCards = selectedCards.filter { $0.id != card.id }
         }
     }
     
