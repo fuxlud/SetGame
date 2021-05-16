@@ -16,16 +16,16 @@ struct CardView: View {
     
     
     var body: some View {
+       
         ZStack {
-            cardColoredView
 
             if self.isFaceUp {
-                RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: 5).padding(2)
-
+                RoundedRectangle(cornerRadius: cornerRadius).fill(Color("Selected")).padding(10)
+                RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: 3).padding(10)
             } else {
-                RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: 1).padding(2)
+                RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: 1).padding(10)
             }
-
+            cardColoredView
         }
     }
     
@@ -39,7 +39,7 @@ struct CardView: View {
             ForEach(0..<card.numberOfShapes.rawValue) { _ -> AnyView in
                 AnyView(coloredFigureView())
             }
-        }.padding(20)
+        }.padding(25)
     }
     
     @ViewBuilder
