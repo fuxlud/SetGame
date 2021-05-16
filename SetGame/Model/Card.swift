@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-enum Shape {
+enum SetShape {
     case diamond
     case rectangle
     case oval
@@ -50,13 +50,13 @@ class Card: Identifiable {
     let id: Int
     let shading: Shading
     let color: SetColor
-    let shape: Shape
+    let shape: SetShape
     let numberOfShapes: SetNumberOfShapes
     var isFaceUp = false
     
     init(id: Int,
          numberOfShapes: SetNumberOfShapes,
-         shape: Shape,
+         shape: SetShape,
          shading: Shading,
          color: SetColor) {
         self.id = id

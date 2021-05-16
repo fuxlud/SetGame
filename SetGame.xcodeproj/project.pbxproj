@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38DD3B642651AE4200D3FAEE /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD3B632651AE4200D3FAEE /* AnyShape.swift */; };
 		848992D4264DBB5F005CB270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992D3264DBB5F005CB270 /* AppDelegate.swift */; };
 		848992D6264DBB5F005CB270 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992D5264DBB5F005CB270 /* SceneDelegate.swift */; };
 		848992DA264DBB6A005CB270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848992D9264DBB6A005CB270 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38DD3B632651AE4200D3FAEE /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };
 		848992D0264DBB5F005CB270 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848992D3264DBB5F005CB270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848992D5264DBB5F005CB270 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38DD3B622651AE1F00D3FAEE /* HelpClasses */ = {
+			isa = PBXGroup;
+			children = (
+				848992E7264DBC17005CB270 /* Grid.swift */,
+				848992E9264DBC31005CB270 /* GridLayout.swift */,
+				848992EB264DBC65005CB270 /* Array+Identifiable.swift */,
+				38DD3B632651AE4200D3FAEE /* AnyShape.swift */,
+			);
+			path = HelpClasses;
+			sourceTree = "<group>";
+		};
 		848992C7264DBB5F005CB270 = {
 			isa = PBXGroup;
 			children = (
@@ -79,10 +92,8 @@
 				848992D5264DBB5F005CB270 /* SceneDelegate.swift */,
 				848992D9264DBB6A005CB270 /* Assets.xcassets */,
 				848992E1264DBB6A005CB270 /* Info.plist */,
+				38DD3B622651AE1F00D3FAEE /* HelpClasses */,
 				848992DB264DBB6A005CB270 /* Preview Content */,
-				848992E7264DBC17005CB270 /* Grid.swift */,
-				848992E9264DBC31005CB270 /* GridLayout.swift */,
-				848992EB264DBC65005CB270 /* Array+Identifiable.swift */,
 			);
 			path = SetGame;
 			sourceTree = "<group>";
@@ -201,6 +212,7 @@
 				848992F6264E2FDB005CB270 /* SetView.swift in Sources */,
 				848992EA264DBC31005CB270 /* GridLayout.swift in Sources */,
 				848992F2264DC4B5005CB270 /* SetViewModel.swift in Sources */,
+				38DD3B642651AE4200D3FAEE /* AnyShape.swift in Sources */,
 				84899303264EB68B005CB270 /* Card.swift in Sources */,
 				848992E8264DBC17005CB270 /* Grid.swift in Sources */,
 				848992FD264E3C97005CB270 /* CardView.swift in Sources */,

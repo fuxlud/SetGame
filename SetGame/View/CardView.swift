@@ -14,16 +14,14 @@ struct CardView: View {
     var card: Card
     
     var body: some View {
-        GeometryReader() { geometry in
+        
+        self.cardColoredView
             
-            self.cardColoredView            
-                .opacity(0.2)
 //            if self.isFaceUp {
 //                RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.blue)
 //            } else {
 //                RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.black)
 //            }
-        }.padding()
     }
     
     var cardColoredView: some View {
@@ -33,15 +31,32 @@ struct CardView: View {
     var figuresView: some View {
         return List(0..<card.numberOfShapes.rawValue, rowContent: { _ -> AnyView in
             
-            switch self.card.shape {
-            case .oval:
-                return AnyView(Capsule())
-            case .rectangle:
-                return AnyView(Rectangle())
-            default:
-                return AnyView(EmptyView())
-            }
+            AnyView(coloredFigureView())
         })
+    }
+    
+    @ViewBuilder
+    func coloredFigureView() -> some View {
+        switch self.card.shading {
+        case .solid:
+            figureShape().fill()
+        case .open:
+            figureShape().stroke(lineWidth: 2)
+        case .striped:
+            figureShape().fill().opacity(0.2)
+        }
+        
+    }
+    
+    func figureShape() -> AnyShape {
+        switch self.card.shape {
+        case .oval:
+            return AnyShape(Capsule())
+        case .rectangle:
+            return AnyShape(Rectangle())
+        case .diamond:
+            return AnyShape(Circle())
+        }
     }
     
     // MARK: Drawing Constants
