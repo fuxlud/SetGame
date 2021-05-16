@@ -20,9 +20,10 @@ struct CardView: View {
         ZStack {
 
             if self.isFaceUp {
-                RoundedRectangle(cornerRadius: cornerRadius).fill(Color("Selected")).padding(10)
+                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.gray).padding(10)
                 RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: 3).padding(10)
             } else {
+                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).padding(10)
                 RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: 1).padding(10)
             }
             cardColoredView

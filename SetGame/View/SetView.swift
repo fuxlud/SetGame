@@ -12,6 +12,13 @@ struct SetView: View {
     @ObservedObject var viewModel: SetViewModel
     
     var body: some View {
+        ZStack{
+            
+            if #available(iOS 14.0, *) {
+                Color("Selected").ignoresSafeArea()
+            } else {
+                // Fallback on earlier versions
+            }
         VStack() {
             HStack(alignment: .bottom) {
                 Text("Score: 100")
@@ -21,9 +28,11 @@ struct SetView: View {
             }
             
             Divider()
-            Grid(viewModel.presentedCards) { card in
-                CardView(isFaceUp: card.isFaceUp, card: card).onTapGesture {
-                    self.viewModel.choose(card: card)
+            
+                Grid(viewModel.presentedCards) { card in
+                    CardView(isFaceUp: card.isFaceUp, card: card).onTapGesture {
+                        self.viewModel.choose(card: card)
+                    }
                 }
             }
         }
