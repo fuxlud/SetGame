@@ -16,8 +16,7 @@ struct CardView: View {
     var body: some View {
         GeometryReader() { geometry in
             
-            FaceView(card: self.card)
-                .foregroundColor(self.card.color.setColor)
+            self.cardColoredView            
                 .opacity(0.2)
 //            if self.isFaceUp {
 //                RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.blue)
@@ -25,6 +24,24 @@ struct CardView: View {
 //                RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.black)
 //            }
         }.padding()
+    }
+    
+    var cardColoredView: some View {
+        self.figuresView               .foregroundColor(self.card.color.setColor)
+    }
+    
+    var figuresView: some View {
+        return List(0..<card.numberOfShapes.rawValue, rowContent: { _ -> AnyView in
+            
+            switch self.card.shape {
+            case .oval:
+                return AnyView(Capsule())
+            case .rectangle:
+                return AnyView(Rectangle())
+            default:
+                return AnyView(EmptyView())
+            }
+        })
     }
     
     // MARK: Drawing Constants
