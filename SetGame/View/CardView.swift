@@ -13,15 +13,20 @@ struct CardView: View {
     var isFaceUp: Bool
     var card: Card
     
+    
+    
     var body: some View {
-        
-        self.cardColoredView
-            
-//            if self.isFaceUp {
-//                RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.blue)
-//            } else {
-//                RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.black)
-//            }
+        ZStack {
+            cardColoredView
+
+            if self.isFaceUp {
+                RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: 5).padding(2)
+
+            } else {
+                RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: 1).padding(2)
+            }
+
+        }
     }
     
     var cardColoredView: some View {
@@ -29,8 +34,9 @@ struct CardView: View {
     }
     
     var figuresView: some View {
+
         return List(0..<card.numberOfShapes.rawValue, rowContent: { _ -> AnyView in
-            
+
             AnyView(coloredFigureView())
         })
     }
