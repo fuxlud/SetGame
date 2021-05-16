@@ -14,11 +14,8 @@ struct SetView: View {
     var body: some View {
         ZStack{
             
-            if #available(iOS 14.0, *) {
-                Color("Selected").ignoresSafeArea()
-            } else {
-                // Fallback on earlier versions
-            }
+        Color("Selected").edgesIgnoringSafeArea(.all)
+            
         VStack() {
             HStack(alignment: .bottom) {
                 Text("Score: 100")

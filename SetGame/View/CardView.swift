@@ -63,7 +63,7 @@ struct CardView: View {
         case .rectangle:
             return AnyShape(Rectangle())
         case .diamond:
-            return AnyShape(Circle())
+            return AnyShape(Diamond())
         }
     }
     

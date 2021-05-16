@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		38DD3B642651AE4200D3FAEE /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD3B632651AE4200D3FAEE /* AnyShape.swift */; };
+		38DD3B692651CA6B00D3FAEE /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD3B682651CA6B00D3FAEE /* Diamond.swift */; };
 		848992D4264DBB5F005CB270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992D3264DBB5F005CB270 /* AppDelegate.swift */; };
 		848992D6264DBB5F005CB270 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992D5264DBB5F005CB270 /* SceneDelegate.swift */; };
 		848992DA264DBB6A005CB270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848992D9264DBB6A005CB270 /* Assets.xcassets */; };
@@ -21,11 +22,11 @@
 		848992F8264E31AA005CB270 /* SetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992F7264E31AA005CB270 /* SetModel.swift */; };
 		848992FD264E3C97005CB270 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992FC264E3C97005CB270 /* CardView.swift */; };
 		84899303264EB68B005CB270 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84899302264EB68B005CB270 /* Card.swift */; };
-		84899305264ED7D2005CB270 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84899304264ED7D2005CB270 /* FaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		38DD3B632651AE4200D3FAEE /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };
+		38DD3B682651CA6B00D3FAEE /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
 		848992D0264DBB5F005CB270 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848992D3264DBB5F005CB270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848992D5264DBB5F005CB270 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		848992F7264E31AA005CB270 /* SetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetModel.swift; sourceTree = "<group>"; };
 		848992FC264E3C97005CB270 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		84899302264EB68B005CB270 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		84899304264ED7D2005CB270 /* FaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 			children = (
 				848992F5264E2FDB005CB270 /* SetView.swift */,
 				848992FC264E3C97005CB270 /* CardView.swift */,
-				84899304264ED7D2005CB270 /* FaceView.swift */,
+				38DD3B682651CA6B00D3FAEE /* Diamond.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,7 +205,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				848992D4264DBB5F005CB270 /* AppDelegate.swift in Sources */,
-				84899305264ED7D2005CB270 /* FaceView.swift in Sources */,
 				848992D6264DBB5F005CB270 /* SceneDelegate.swift in Sources */,
 				848992F8264E31AA005CB270 /* SetModel.swift in Sources */,
 				848992F0264DC0E0005CB270 /* CardsFactory.swift in Sources */,
@@ -214,6 +213,7 @@
 				848992F2264DC4B5005CB270 /* SetViewModel.swift in Sources */,
 				38DD3B642651AE4200D3FAEE /* AnyShape.swift in Sources */,
 				84899303264EB68B005CB270 /* Card.swift in Sources */,
+				38DD3B692651CA6B00D3FAEE /* Diamond.swift in Sources */,
 				848992E8264DBC17005CB270 /* Grid.swift in Sources */,
 				848992FD264E3C97005CB270 /* CardView.swift in Sources */,
 				848992EC264DBC65005CB270 /* Array+Identifiable.swift in Sources */,
