@@ -18,15 +18,26 @@ struct CardView: View {
     var body: some View {
        
         ZStack {
-
             if self.isFaceUp {
-                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.gray).padding(10)
-                RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: 3).padding(10)
+                selectedCard
             } else {
-                RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).padding(10)
-                RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: 1).padding(10)
+                regularCard
             }
             cardColoredView
+        }
+    }
+    
+    var regularCard: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).padding(cornerRadius)
+            RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: 1).padding(cornerRadius)
+        }
+    }
+    
+    var selectedCard: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: cornerRadius).fill(Color.gray).padding(cornerRadius)
+            RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth).padding(cornerRadius)
         }
     }
     

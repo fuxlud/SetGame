@@ -28,12 +28,13 @@ class SetGame {
     }
     
     func select(_ card: Card) {
-        if selectedCards.count == 3 {
-            turnDownAllChosenCards()
-        }
-        
         card.select()
         selectedCards.append(card)
+        
+        if (selectedCards.count == 3) {
+            let isSet = checkIfSet()
+//            turnDownAllSelectedCards()
+        }
     }
     
     func unselect(_ card: Card) {
@@ -41,13 +42,33 @@ class SetGame {
         selectedCards = selectedCards.filter { $0.id != card.id }
     }
     
+    func checkIfSet() -> Bool {
+        let card1 = selectedCards[0]
+        let card2 = selectedCards[1]
+        let card3 = selectedCards[2]
+        
+        let equalShading = (card1.shading == card2.shading) && (card2.shading == card3.shading)
+        let differentShading = (card1.shading != card2.shading) && (card2.shading != card3.shading) && (card1.shading != card3.shading)
+        
+        let equalColor = (card1.color == card2.color) && (card2.color == card3.color)
+        let differentColor = (card1.color != card2.color) && (card2.color != card3.color) && (card1.color != card3.color)
+        
+        let equalShade = (card1.shape == card2.shape) && (card2.shape == card3.shape)
+        let differentShade = (card1.shape != card2.shape) && (card2.shape != card3.shape) && (card1.shape != card3.shape)
+        
+        let equalNumberOfShapes = (card1.numberOfShapes == card2.numberOfShapes) && (card2.numberOfShapes == card3.numberOfShapes)
+        let differentNumberOfShapes = (card1.numberOfShapes != card2.numberOfShapes) && (card2.numberOfShapes != card3.numberOfShapes) && (card1.numberOfShapes != card3.numberOfShapes)
+        
+        return (equalShading || differentShading) && (equalColor || differentColor) && (equalShade || differentShade) && (equalNumberOfShapes && differentNumberOfShapes)
+    }
+    
     func resetGame() {
         
-        turnDownAllChosenCards()
+        turnDownAllSelectedCards()
         chooseNewCardToPresent()
     }
     
-    func turnDownAllChosenCards() {
+    func turnDownAllSelectedCards() {
         for card in selectedCards {
             card.unselect()
             selectedCards = selectedCards.filter { $0.id != card.id }
