@@ -46,13 +46,21 @@ enum SetNumberOfShapes: Int {
     case three
 }
 
-class Card: Identifiable {
+enum CardState {
+    case unselected
+    case selected
+    case matched
+    case wrongMatch
+}
+
+class Card: Identifiable, CustomStringConvertible {
+    
     let id: Int
     let shading: Shading
     let color: SetColor
     let shape: SetShape
     let numberOfShapes: SetNumberOfShapes
-    var isSelected = false
+    var cardState: CardState = .unselected
     
     init(id: Int,
          numberOfShapes: SetNumberOfShapes,
@@ -67,10 +75,29 @@ class Card: Identifiable {
     }
     
     func select() {
-        self.isSelected = true
+        self.cardState = .selected
     }
     
     func unselect() {
-        self.isSelected = false
+        self.cardState = .unselected
+    }
+    
+    func markAsMatch() {
+        self.cardState = .matched
+    }
+    
+    func markAsNotMatched() {
+        self.cardState = .wrongMatch
+    }
+    
+    var description: String {
+       return """
+ 
+Shape \(id)
+    numberOfShapes - \(numberOfShapes)
+    shading - \(shading)
+    color - \(color)
+    shape - \(shape)
+"""
     }
 }

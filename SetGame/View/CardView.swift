@@ -15,11 +15,17 @@ struct CardView: View {
     var body: some View {
        
         ZStack {
-            if viewModel.isSelected {
+            switch viewModel.cardState {
+            case .matched:
+                matchedCard
+            case .selected:
                 selectedCard
-            } else {
+            case .unselected:
                 regularCard
+            case .wrongMatch:
+                wrongMatch
             }
+            
             cardColoredView
         }
     }
@@ -28,6 +34,30 @@ struct CardView: View {
         ZStack {
             RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).padding(cornerRadius)
             RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: 1).padding(cornerRadius)
+        }
+    }
+
+    var matchedCard: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .fill(Color.blue)
+                .padding(cornerRadius)
+                .opacity(0.3)
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .stroke(Color.blue, lineWidth: edgeLineWidth)
+                .padding(cornerRadius)
+        }
+    }
+    
+    var wrongMatch: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .fill(Color.red)
+                .padding(cornerRadius)
+                .opacity(0.3)
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .stroke(Color.red, lineWidth: edgeLineWidth)
+                .padding(cornerRadius)
         }
     }
     

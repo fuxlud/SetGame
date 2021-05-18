@@ -16,10 +16,6 @@ class CardViewModel: ObservableObject {
         self.card = model
     }
     
-    var isSelected: Bool {
-        card.isSelected
-    }
-    
     var shading: Shading {
         card.shading
     }
@@ -34,6 +30,10 @@ class CardViewModel: ObservableObject {
     
     var setShape: SetShape {
         card.shape
+    }
+    
+    var cardState: CardState {
+        card.cardState
     }
     
     func choose() {
