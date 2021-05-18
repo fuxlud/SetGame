@@ -9,16 +9,13 @@
 import SwiftUI
 
 struct CardView: View {
-    
-    var isFaceUp: Bool
-    var card: Card
-    
-    
+
+    @ObservedObject var viewModel: CardViewModel
     
     var body: some View {
        
         ZStack {
-            if self.isFaceUp {
+            if viewModel.isSelected {
                 selectedCard
             } else {
                 regularCard
@@ -42,13 +39,13 @@ struct CardView: View {
     }
     
     var cardColoredView: some View {
-        self.figuresView               .foregroundColor(self.card.color.setColor)
+        self.figuresView               .foregroundColor(self.viewModel.color)
     }
     
     var figuresView: some View {
 
         return VStack(alignment: .center) {
-            ForEach(0..<card.numberOfShapes.rawValue) { _ -> AnyView in
+            ForEach(0..<viewModel.numberOfShapes.rawValue) { _ -> AnyView in
                 AnyView(coloredFigureView())
             }
         }.padding(25)
@@ -56,7 +53,7 @@ struct CardView: View {
     
     @ViewBuilder
     func coloredFigureView() -> some View {
-        switch self.card.shading {
+        switch self.viewModel.shading {
         case .solid:
             figureShape().fill()
         case .open:
@@ -68,7 +65,7 @@ struct CardView: View {
     }
     
     func figureShape() -> AnyShape {
-        switch self.card.shape {
+        switch self.viewModel.setShape {
         case .oval:
             return AnyShape(Capsule())
         case .rectangle:
@@ -87,6 +84,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         let card = Card(id: 1, numberOfShapes: .two, shape: .oval, shading: .solid, color: .green)
-        return CardView(isFaceUp: true, card: card)
+        let viewModel = CardViewModel(model: card)
+        return CardView(viewModel: viewModel)
     }
 }

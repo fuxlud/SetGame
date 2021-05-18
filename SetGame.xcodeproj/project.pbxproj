@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		38DD3B642651AE4200D3FAEE /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD3B632651AE4200D3FAEE /* AnyShape.swift */; };
 		38DD3B692651CA6B00D3FAEE /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD3B682651CA6B00D3FAEE /* Diamond.swift */; };
+		38DD3B6D265411E700D3FAEE /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD3B6C265411E700D3FAEE /* CardViewModel.swift */; };
 		848992D4264DBB5F005CB270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992D3264DBB5F005CB270 /* AppDelegate.swift */; };
 		848992D6264DBB5F005CB270 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848992D5264DBB5F005CB270 /* SceneDelegate.swift */; };
 		848992DA264DBB6A005CB270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848992D9264DBB6A005CB270 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		38DD3B632651AE4200D3FAEE /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };
 		38DD3B682651CA6B00D3FAEE /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
+		38DD3B6C265411E700D3FAEE /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		848992D0264DBB5F005CB270 /* SetGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SetGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848992D3264DBB5F005CB270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848992D5264DBB5F005CB270 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				848992F1264DC4B5005CB270 /* SetViewModel.swift */,
+				38DD3B6C265411E700D3FAEE /* CardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				848992F0264DC0E0005CB270 /* CardsFactory.swift in Sources */,
 				848992F6264E2FDB005CB270 /* SetView.swift in Sources */,
 				848992EA264DBC31005CB270 /* GridLayout.swift in Sources */,
+				38DD3B6D265411E700D3FAEE /* CardViewModel.swift in Sources */,
 				848992F2264DC4B5005CB270 /* SetViewModel.swift in Sources */,
 				38DD3B642651AE4200D3FAEE /* AnyShape.swift in Sources */,
 				84899303264EB68B005CB270 /* Card.swift in Sources */,
