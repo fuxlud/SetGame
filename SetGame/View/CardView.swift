@@ -13,67 +13,65 @@ struct CardView: View {
     @ObservedObject var viewModel: CardViewModel
     
     var body: some View {
-       
+        entireCard
+            .rotationEffect(Angle(degrees: (viewModel.cardState == CardState.selected) ? 180 : 0))
+            .scaleEffect(viewModel.cardState == CardState.matched ? 1.1 : 1)
+            .animation(.easeInOut)
+    }
+    
+    var entireCard: some View {
         ZStack {
-            switch viewModel.cardState {
-            case .matched:
-                matchedCard
-            case .selected:
-                selectedCard
-            case .unselected:
-                regularCard
-            case .wrongMatch:
-                wrongMatch
-            }
-            
-            cardColoredView
+            cardSkin
+            cardFront
         }
     }
     
-    var regularCard: some View {
+    var cardSkin: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: cornerRadius).fill(Color.white).padding(cornerRadius)
-            RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: 1).padding(cornerRadius)
+            RoundedRectangle(cornerRadius: cornerRadius)
+                .fill(cardBackground())
+                .padding(cornerRadius)
+                .opacity(0.3)
+            RoundedRectangle(cornerRadius: self.cornerRadius)
+                .stroke(strockColor(), lineWidth: strockWidth())
+                .padding(cornerRadius)
         }
     }
 
-    var matchedCard: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .fill(Color.blue)
-                .padding(cornerRadius)
-                .opacity(0.3)
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(Color.blue, lineWidth: edgeLineWidth)
-                .padding(cornerRadius)
+    func cardBackground() -> Color {
+        switch viewModel.cardState {
+        case .selected:
+            return Color.gray
+        case .unselected:
+            return Color.white
+        case .matched:
+            return Color.blue
+        case .wrongMatch:
+            return Color.red
         }
     }
     
-    var wrongMatch: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .fill(Color.red)
-                .padding(cornerRadius)
-                .opacity(0.3)
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(Color.red, lineWidth: edgeLineWidth)
-                .padding(cornerRadius)
+    func strockColor() -> Color {
+        switch viewModel.cardState {
+        case .selected, .unselected:
+            return Color.black
+        case .matched:
+            return Color.blue
+        case .wrongMatch:
+            return Color.red
         }
     }
     
-    var selectedCard: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: cornerRadius).fill(Color.gray).padding(cornerRadius)
-            RoundedRectangle(cornerRadius: cornerRadius).stroke(lineWidth: edgeLineWidth).padding(cornerRadius)
-        }
+    func strockWidth() -> CGFloat {
+        viewModel.cardState == .unselected ? 1 : 3
     }
     
-    var cardColoredView: some View {
-        self.figuresView               .foregroundColor(self.viewModel.color)
+    var cardFront: some View {
+        self.figuresView
+            .foregroundColor(self.viewModel.color)
     }
     
     var figuresView: some View {
-
         return VStack(alignment: .center) {
             ForEach(0..<viewModel.numberOfShapes.rawValue) { _ -> AnyView in
                 AnyView(coloredFigureView())
